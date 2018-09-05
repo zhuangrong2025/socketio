@@ -182,7 +182,7 @@ Desktop.ini
 
 *.rar
 *.zip
-
+*.mp4
 
 **/node_modules/
 *.bat

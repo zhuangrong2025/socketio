@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/jquery-3.2.1.min.js"></script>
+<script>
+$(function () {
+    var socket = io();
+    $('form').submit(function(){
+
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('').focus();
+      return false;
+    });
+
+    // 服务器推送过来的消息
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+      $(".video li video").each(function(){
+         $(this)[0].pause()
+      })
+      setTimeout(function(){
+        $("#myVideo" + msg)[0].currentTime = 0
+        $("#myVideo" + msg)[0].play()
+      },10)
+
+
+
+    });
+  });
+</script>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+
+      /* 视频 */
+      .video li{
+        display: inline-block;
+        margin: 0 10px;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        border: 1px solid  #eee;
+      }
+      .video li span{
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+    <!-- 视频 -->
+    <div class="video">
+      <ul>
+        <li>
+          <video id="myVideo1" preload="auto" width="100" height="100" x-webkit-airplay="true" webkit-playsinline="true" src="/images/show.mp4" x5nativepanel=""></video>
+          <span>v001</span>
+        </li>
+        <li>
+          <video id="myVideo2" preload="auto" width="100" height="100" x-webkit-airplay="true" webkit-playsinline="true" src="/images/show.mp4" x5nativepanel=""></video>
+          <span>v002</span>
+        </li>
+      </ul>
+    </div>
+    <!-- // 视频 -->
+  </body>
+</html>

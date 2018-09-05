@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/jquery-3.2.1.min.js"></script>
+<script>
+$(function () {
+    var socket = io();
+    $(".broadcast button").each(function(){
+      $(this).on("click",function(){
+        console.log($(this).text());
+        socket.emit('chat message', $(this).text());
+      })
+    })
+    // 服务器推送过来的消息
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+      $(".video li video").each(function(){
+         $(this)[0].pause()
+      })
+      setTimeout(function(){
+        $("#myVideo" + msg)[0].currentTime = 0
+        $("#myVideo" + msg)[0].play()
+      },10)
+
+
+
+    });
+  });
+</script>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+    ul,li{
+      list-style: none;
+    }
+    .broadcast{
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+    }
+    .broadcast button{
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      border: 1px solid  #ccc;
+      border-radius: 5px;
+      margin: 0 10px;
+      padding: 8px;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form> -->
+    <!-- 按钮 -->
+    <div class="broadcast">
+      <button>1</button>
+      <button>2</button>
+    </div>
+    <!-- // 按钮 -->
+    <!-- 视频 -->
+    <div class="video">
+      <ul>
+        <li>
+          <video id="myVideo1" preload="auto" width="100" height="100" x-webkit-airplay="true" webkit-playsinline="true" src="/images/show.mp4" x5nativepanel=""></video>
+          <span>v001</span>
+        </li>
+        <li>
+          <video id="myVideo2" preload="auto" width="100" height="100" x-webkit-airplay="true" webkit-playsinline="true" src="/images/show.mp4" x5nativepanel=""></video>
+          <span>v002</span>
+        </li>
+      </ul>
+    </div>
+    <!-- // 视频 -->
+  </body>
+</html>

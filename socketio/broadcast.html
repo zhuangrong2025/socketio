@@ -28,6 +28,11 @@ $(function () {
         $("#" + msg)[0].play()
       },10)
     });
+
+    // 点击切换ad图片
+    $(".ad").on("click",function(){
+      $(this).css("background-image","url(images/train.png)")
+    })
   });
 </script>
 </head>
@@ -42,33 +47,33 @@ $(function () {
     <!-- 按钮组 -->
     <div class="broadcast">
       <div class="btn-group point">
-        <button title="start">扣分<br>开始</button>
-        <button title="aa">aa</button>
-        <button title="">a</button>
-        <button title="">b</button>
-        <button title="">c</button>
-        <button title="start">扣分<br>开始</button>
-        <button title="">aa</button>
-        <button title="">a</button>
-        <button title="">b</button>
-        <button title="">c</button>
+        <button title=""><em>安全带<br>扣100</em></button>
+        <button title=""><em>车身出<br>线100</em></button>
+        <button title=""><em>车轮压<br>线100</em></button>
+        <button title=""><em>中途停<br>车10</em></button>
+        <button title=""><em>方向灯<br>扣10</em></button>
+        <button title=""><em>定点<br>扣10</em></button>
+        <button title=""><em>靠边<br>扣10</em></button>
+        <button title=""><em>熄火<br>扣10</em></button>
+        <button title="">空</button>
+        <button title="">空</button>
       </div>
       <div class="btn-group console">
-        <button title="start">成绩<br>开始</button>
-        <button title="">aa</button>
-        <button title="">a</button>
-        <button title="">b</button>
-        <button title="">c</button>
+        <button title="">合格</button>
+        <button title="">不<br>合格</button>
+        <button title="">空</button>
+        <button title="">空</button>
+        <button title="">空</button>
       </div>
       <div class="btn-group project">
-        <button title="start">开始<br>开始</button>
-        <button title="">aa</button>
-        <button title="">a</button>
-        <button title="">b</button>
-        <button title="">c</button>
+        <button title="poDao">坡道<br>起步</button>
+        <button title="cheFan">侧方<br>停车</button>
+        <button title="quXian">曲线<br>行驶</button>
+        <button title="zhiJiao">直角<br>拐弯</button>
+        <button title="ruku">倒车<br>入库</button>
       </div>
       <div class="btn-start">
-        <button title="">开始开始</button>
+        <button title="start">考试开始</button>
       </div>
     </div>
     <!-- // 按钮组 -->

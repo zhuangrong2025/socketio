@@ -47,30 +47,30 @@ $(function () {
     <!-- 按钮组 -->
     <div class="broadcast">
       <div class="btn-group point">
-        <button title="">没安<br>全带<em>扣100</em></button>
-        <button title="">车身<br>出线<em>扣100</em></button>
-        <button title="">车轮<br>出线<em>扣100</em></button>
-        <button title="">中途<br>停车<em>扣10</em></button>
-        <button title="">没方<br>向灯<em>扣10</em></button>
-        <button title="">定点<br>不准<em>扣10</em></button>
-        <button title="">靠边<br>不准<em>扣10</em></button>
-        <button title="">熄火<br><em>扣10</em></button>
-        <button title="">空</button>
-        <button title="">空</button>
+        <button title="safe">没安<br>全带<em>扣100</em></button>
+        <button title="bodyOut">车身<br>出线<em>扣100</em></button>
+        <button title="wheel">车轮<br>出线<em>扣100</em></button>
+        <button title="stop">中途<br>停车<em>扣10</em></button>
+        <button title="light">未开<br>转灯<em>扣10</em></button>
+        <button title="point">定点<br>不准<em>扣10</em></button>
+        <button title="outline">靠边<br>不准<em>扣10</em></button>
+        <button title="fire">熄火<br><em>扣10</em></button>
+        <button title="door">车门<br>未关<em>扣100</em></button>
+        <button title="after">后溜<em>扣10</em></button>
       </div>
       <div class="btn-group console">
-        <button title="">合格</button>
-        <button title="">不<br>合格</button>
-        <button title="">空</button>
-        <button title="">空</button>
-        <button title="">空</button>
+        <button title="success">及格</button>
+        <button title="failure">不<br>及格</button>
+        <button title="end">项目<br>结束</button>
+        <button title="parkAndStart">定点<br>起步</button>
+        <button title="startBack">请<br>倒车</button>
       </div>
       <div class="btn-group project">
         <button title="poDao">坡道<br>起步</button>
         <button title="cheFan">侧方<br>停车</button>
         <button title="quXian">曲线<br>行驶</button>
         <button title="zhiJiao">直角<br>拐弯</button>
-        <button title="ruku">倒车<br>入库</button>
+        <button title="ruKu">倒车<br>入库</button>
       </div>
       <div class="btn-start">
         <button title="start">考试开始</button>
@@ -82,11 +82,72 @@ $(function () {
   <!-- 音频 -->
   <div class="audio-list">
     <ul>
+      <!-- start -->
       <li>
-        <audio id="start" preload="auto" src="/images/start.mp3" x5nativepanel=""></audio>
+        <audio id="start" preload="auto" src="/images/start.mp3" ></audio>
+      </li>
+      <!-- project -->
+      <li>
+        <audio id="poDao" preload="auto" src="/images/poDao.mp3" ></audio>
       </li>
       <li>
-        <audio id="ruku" preload="auto" src="/images/ruku.mp3" x5nativepanel=""></audio>
+        <audio id="cheFan" preload="auto" src="/images/cheFan.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="quXian" preload="auto" src="/images/quXian.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="zhiJiao" preload="auto" src="/images/zhiJiao.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="ruKu" preload="auto" src="/images/ruKu.mp3" ></audio>
+      </li>
+      <!-- control -->
+      <li>
+        <audio id="success" preload="auto" src="/images/success.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="failure" preload="auto" src="/images/failure.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="startBack" preload="auto" src="/images/startBack.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="end" preload="auto" src="/images/end.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="parkAndStart" preload="auto" src="/images/parkAndStart.mp3" ></audio>
+      </li>
+      <!-- 扣分 -->
+      <li>
+        <audio id="safe" preload="auto" src="/images/safe.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="bodyOut" preload="auto" src="/images/bodyOut.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="fire" preload="auto" src="/images/fire.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="outline" preload="auto" src="/images/outline.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="door" preload="auto" src="/images/door.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="after" preload="auto" src="/images/after.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="stop" preload="auto" src="/images/stop.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="wheel" preload="auto" src="/images/wheel.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="point" preload="auto" src="/images/point.mp3" ></audio>
+      </li>
+      <li>
+        <audio id="light" preload="auto" src="/images/light.mp3" ></audio>
       </li>
     </ul>
   </div>
